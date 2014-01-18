@@ -16,11 +16,8 @@ describe "Messages" do
     
     it "redirects to /messages" do
       
-
-      response.status.should eq 302 # could remove this as the second test implies a redirect
-      response.location.should eq user_messages_url
       response.status.should eq 302
-      response.location.should eq messages_url
+      response.location.should eq  messages_url
       
       
     end
@@ -32,7 +29,6 @@ describe "Messages" do
     it "redirect to the messages index" do
       # capybara methods
       visit new_message_path 
-      fill_in :message_body, with: 'Test' #brittle, but hey, watcha gonna do??
       fill_in :message_body, with: 'Test'
       click_button 'Send'
       page.should have_content 'Test'
