@@ -1,4 +1,5 @@
-class UserMessagesController < ApplicationController
+class MessagesController < ApplicationController
+
   def index
     
   end
@@ -6,7 +7,7 @@ class UserMessagesController < ApplicationController
   def create
     
     Message.create message_params
-    redirect_to user_messages_url # use _url because http spec says redirect has to include full url. use root_path in views
+    redirect_to messages_url # use _url because http spec says redirect has to include full url. use root_path in views
     
   end
   
@@ -27,4 +28,11 @@ class UserMessagesController < ApplicationController
   end
   helper_method :message #expose it to the view
   
+  def messages
+    
+    @messages = Message.all
+    
+  end
+  helper_method :messages
 end
+

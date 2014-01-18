@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "UserMessages" do
+describe "Messages" do
   
-  describe "POST /user_messages" do
+  describe "POST /messages" do
     before do
-      post user_messages_path, message: { body: 'Test' }
+      post messages_path, message: { body: 'Test' }
       
     end
     
@@ -14,10 +14,10 @@ describe "UserMessages" do
       
     end
     
-    it "redirects to /user_messages" do
+    it "redirects to /messages" do
       
       response.status.should eq 302
-      response.location.should eq user_messages_url
+      response.location.should eq messages_url
       
       
     end
@@ -28,7 +28,7 @@ describe "UserMessages" do
   describe "creating a message", type: :feature do
     it "redirect to the messages index" do
       # capybara methods
-      visit new_user_message_path 
+      visit new_message_path 
       fill_in :message_body, with: 'Test'
       click_button 'Send'
       page.should have_content 'Test'

@@ -663,3 +663,374 @@ Started GET "/user_messages/new" for 127.0.0.1 at 2014-01-18 16:55:41 +0000
 Processing by UserMessagesController#new as HTML
 Completed 500 Internal Server Error in 29ms
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/user_messages" for 127.0.0.1 at 2014-01-18 19:23:20 +0000
+Processing by UserMessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.9ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:23:20 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:23:20 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/user_messages
+Completed 302 Found in 45ms (ActiveRecord: 8.7ms)
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started POST "/user_messages" for 127.0.0.1 at 2014-01-18 19:23:20 +0000
+Processing by UserMessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:23:20 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:23:20 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/user_messages
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/user_messages/new" for 127.0.0.1 at 2014-01-18 19:23:20 +0000
+Processing by UserMessagesController#new as HTML
+Completed 500 Internal Server Error in 531ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:25:31 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.1ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:25:31 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:25:31 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 45ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:25:31 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:25:31 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:25:31 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:25:31 +0000
+Processing by MessagesController#new as HTML
+Completed 500 Internal Server Error in 11ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:26:22 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:26:22 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:26:22 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 47ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:26:22 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:26:22 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:26:22 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:26:22 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 617ms (Views: 616.6ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:26:23 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:26:23 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:26:23 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:29:44 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:29:44 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:29:44 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 47ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:29:44 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (1.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:29:44 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:29:44 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:29:44 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 612ms (Views: 611.3ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:29:45 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:29:45 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:29:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:30:23 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 182ms (Views: 114.1ms | ActiveRecord: 2.2ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:30:23 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (2.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:30:23 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:30:23 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 15ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:30:50 +0000
+Processing by MessagesController#new as HTML
+  Rendered messages/new.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 689ms (Views: 624.5ms | ActiveRecord: 2.2ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:30:51 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.5ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 12ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:30:51 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:30:51 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:30:51 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 5ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:32:04 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:32:04 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:32:04 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 45ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:32:04 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:32:04 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:32:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:32:04 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 106ms (Views: 105.9ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:32:05 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:32:05 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:32:05 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:34:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:34:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:34:07 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 46ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:34:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:34:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:34:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 7ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:34:07 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 106ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:34:08 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:34:08 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:34:08 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:35:07 +0000
+Processing by MessagesController#new as HTML
+  Rendered messages/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 185ms (Views: 117.2ms | ActiveRecord: 2.2ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 13ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.2ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:44 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.1ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 43ms (ActiveRecord: 7.7ms)
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:44 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:35:44 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 105ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:35:44 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:35:44 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/messages" for 127.0.0.1 at 2014-01-18 19:35:44 +0000
+Processing by MessagesController#index as HTML
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:37:06 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:37:06 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:37:06 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 43ms (ActiveRecord: 8.0ms)
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:37:06 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (1.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:37:06 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:37:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:37:06 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 609ms (Views: 608.8ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:37:07 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:37:07 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:37:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/messages" for 127.0.0.1 at 2014-01-18 19:37:07 +0000
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 20ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:38:25 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.4ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 44ms (ActiveRecord: 8.0ms)
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:38:25 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/messages/new" for 127.0.0.1 at 2014-01-18 19:38:25 +0000
+Processing by MessagesController#new as HTML
+Completed 200 OK in 108ms (Views: 107.7ms | ActiveRecord: 0.0ms)
+Started POST "/messages" for 127.0.0.1 at 2014-01-18 19:38:25 +0000
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test"}, "commit"=>"Send"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 19:38:25 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/messages" for 127.0.0.1 at 2014-01-18 19:38:25 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
