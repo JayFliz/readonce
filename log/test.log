@@ -94,3 +94,27 @@ Redirected to http://www.example.com/
 Completed 302 Found in 81ms (ActiveRecord: 44.5ms)
   [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "messages"
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/user_messages" for 127.0.0.1 at 2014-01-18 15:36:33 +0000
+Processing by UserMessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "messages" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Sat, 18 Jan 2014 15:36:33 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 15:36:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 43ms (ActiveRecord: 7.8ms)
+  [1m[35mMessage Load (0.6ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started POST "/user_messages" for 127.0.0.1 at 2014-01-18 15:41:01 +0000
+Processing by UserMessagesController#create as HTML
+  Parameters: {"message"=>{"body"=>"Test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "messages" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["body", "Test"], ["created_at", Sat, 18 Jan 2014 15:41:01 UTC +00:00], ["updated_at", Sat, 18 Jan 2014 15:41:01 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 48ms (ActiveRecord: 10.1ms)
+  [1m[35mMessage Load (0.8ms)[0m  SELECT "messages".* FROM "messages" ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
