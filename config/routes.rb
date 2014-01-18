@@ -4,6 +4,6 @@ Readonce::Application.routes.draw do
   
   root to: 'mockup#index'
   
-  resources :user_messages
+  resources :messages
   
 end
