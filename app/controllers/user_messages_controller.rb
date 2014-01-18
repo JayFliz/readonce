@@ -9,6 +9,8 @@ class UserMessagesController < ApplicationController
   
   def message_params
     
+    #whitelist
+    
     params[:message].permit :body
     
   end
