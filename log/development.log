@@ -24,3 +24,12 @@ Migrating to DeviseCreateUsers (20140118141131)
   [1m[35m (8.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140118141131')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMessages (20140118152030)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (163.3ms)[0m  [1mCREATE TABLE "messages" ("id" serial primary key, "body" text, "sender_id" integer, "receiver_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (5.7ms)[0m  CREATE INDEX "index_messages_on_sender_id" ON "messages" ("sender_id")
+  [1m[36m (5.2ms)[0m  [1mCREATE INDEX "index_messages_on_receiver_id" ON "messages" ("receiver_id")[0m
+  [1m[35mSQL (20.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140118152030"]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
