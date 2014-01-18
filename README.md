@@ -1,4 +1,0 @@
-readonce
-========
-
-GA readonce app
