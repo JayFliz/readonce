@@ -3,8 +3,8 @@ box: wercker/rvm
 # See the Rails section on the wercker devcenter:
 # http://devcenter.wercker.com/articles/languages/ruby/settingup-rails4.html
 # You will want to define your database as follows:
-# services:
-#   - wercker/postgresql
+services:
+  - wercker/postgresql
 # See more about services on our devcenter:
 # http://devcenter.wercker.com/articles/services/
 build:
@@ -17,17 +17,9 @@ build:
         - bundle-install
 
         # A step that prepares the database.yml using the database in services
-        # - rails-database-yml
+        - rails-database-yml
 
-        # A custom script step, name value is used in the UI
-        # and the code value contains the command that get executed
-        - script:
-            name: echo ruby information
-            code: |
-                echo "ruby version $(ruby --version) running"
-                echo "from location $(which ruby)"
-                echo -p "gem list: $(gem list)"
-
+        
         # Add more steps here:
         - script:
             name: rspec
