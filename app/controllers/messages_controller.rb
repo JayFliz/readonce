@@ -28,11 +28,12 @@ class MessagesController < ApplicationController
     
     #whitelist
     
-    params[:message].permit :body
+    params[:message].permit :body, :receiver_id
     
   end
   
   def message
+    
     @message ||= Message.new #memoization
   end
   helper_method :message #expose it to the view
