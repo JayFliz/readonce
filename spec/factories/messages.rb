@@ -5,4 +5,5 @@ FactoryGirl.define do
     body "my message"
     receiver { build_stubbed(:user) }
   end
+  
 end
