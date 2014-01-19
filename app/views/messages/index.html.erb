@@ -4,7 +4,7 @@
      
         <% messages.each do |m| %>
           <div class='message'>
-            <span class='message-sender'><%= message.sender.email %></span>
+            <span class='message-sender'><%= m.sender.email %></span>
             <time><%= time_ago_in_words m.created_at %></time>
             <span class='message-excerpt'><%= m.body %></span>
           </div>
