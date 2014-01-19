@@ -1,8 +1,14 @@
+<div class='container'>
+  <div id='messages'>
+    <h1>Messages</h1>
+     
+        <% messages.each do |m| %>
+          <div class='message'>
+            <span class='message-sender'><%= message.sender.email %></span>
+            <time><%= time_ago_in_words m.created_at %></time>
+            <span class='message-excerpt'><%= m.body %></span>
+          </div>
+        <% end %>
 
-
-<% messages.each do |m| %>
-
-	<%= m.body %>
-	<br />
-
-<% end %>
+  </div>
+</div>
