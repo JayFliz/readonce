@@ -1,13 +1,22 @@
 class MessagesController < ApplicationController
-
+  before_action :authenticate_user! #devise method
+  
+  respond_to :html
+  
   def index
     
   end
   
   def create
+    # day 1
+    #Message.create message_params
+    #redirect_to messages_url # use _url because http spec says redirect has to include full url. use root_path in views
+     
+    #day 2
     
-    Message.create message_params
-    redirect_to messages_url # use _url because http spec says redirect has to include full url. use root_path in views
+    # @message = Message.create(message_params) # removed to allow us to associate message to current devise user
+    @message = current_user.messages.create(message_params)
+    respond_with message, location: messages_url
     
   end
   
@@ -30,7 +39,7 @@ class MessagesController < ApplicationController
   
   def messages
     
-    @messages = Message.all
+    @messages ||= current_user.messages
     
   end
   helper_method :messages
