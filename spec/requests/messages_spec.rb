@@ -24,11 +24,24 @@ describe "Messages" do
         it 'displays an error message' do
           visit new_message_path
           click_button 'Send'
-          page.should have_content "can't be blank"
+          page.should have_content "Body can't be blank"
         end
       end 
       
-    end
+      context 'without specifying a receiver' do
+        it 'displays an error' do
+          visit new_message_path
+          fill_in :message_body, with: 'Test'
+          click_button 'Send'
+          
+          page.should have_content "Receiver can't be blank"
+          
+        end
+        
+      end
+      
+      
+    end # create a message
     
     describe 'viewing a list of messages',  type: :feature do
       before do
